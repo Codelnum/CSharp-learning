@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mvpug\\OneDrive\\Рабочий стол\\GB-learning\\CSharp\\hw5\\hw5.csproj",
+      "projectUniqueName": "C:\\Users\\mvpug\\OneDrive\\Рабочий стол\\CSharp-learning\\CSharp\\Homework-5\\hw5.csproj",
       "projectName": "hw5",
-      "projectPath": "C:\\Users\\mvpug\\OneDrive\\Рабочий стол\\GB-learning\\CSharp\\hw5\\hw5.csproj",
+      "projectPath": "C:\\Users\\mvpug\\OneDrive\\Рабочий стол\\CSharp-learning\\CSharp\\Homework-5\\hw5.csproj",
       "packagesPath": "C:\\Users\\mvpug\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mvpug\\OneDrive\\Рабочий стол\\GB-learning\\CSharp\\hw5\\obj\\",
+      "outputPath": "C:\\Users\\mvpug\\OneDrive\\Рабочий стол\\CSharp-learning\\CSharp\\Homework-5\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mvpug\\AppData\\Roaming\\NuGet\\NuGet.Config"
