@@ -94,7 +94,7 @@ double FindMin(int size)
     return min;
 }
 
-double [] GetArray(int size)   //почему где-то нужно указывать идентийикатор для size, а где-то нет, как в стр. 72 или 77?
+double [] GetArray(int size)   //почему где-то нужно указывать идентификатор для size, а где-то нет, как в стр. 72 или 99?
 {
     double []fillarray= new double [size];
     for(int i = 0; i<size; i++)
