@@ -70,36 +70,40 @@ Console.Clear();
 Console.WriteLine("enter array size");
 int size = Convert.ToInt32(Console.ReadLine());
 double []array = GetArray(size);
-Console.WriteLine(String.Join(" ",array));
-double max = array[0]; max = FindMax(size);  //почему-то не хочет присваивать FindMax
-double min = array[0]; min = FindMin(size);
+Console.WriteLine(String.Join(" ",array)); //ЗАДАН МАССИВ 
 
-Console.WriteLine($"Дельта:{max-min}");
+double max = FindMax(size);
+double min = FindMin(size);
 
-double FindMax(int size)
+Console.WriteLine($"MAX:{max}");    
+Console.WriteLine($"MIN:{min}");
+Console.WriteLine($"Дельта:{max-min}");  // Разница между макс и мин
+
+double [] GetArray(int size)  
 {
-    for(int n=0; n<size-1; n=n+1)
-    {
-        double max = (array[n]>array[n+1])?array[n]:array[n+1];
-    }
-    return max;
-}
-
-double FindMin(int size)
-{
-    for(int n=0; n<size-1; n=n+1)
-    {
-        double min = (array[n]<array[n+1])?array[n]:array[n+1];
-    }
-    return min;
-}
-
-double [] GetArray(int size)   //почему где-то нужно указывать идентификатор для size, а где-то нет, как в стр. 72 или 99?
-{
-    double []fillarray= new double [size];
+    double []fillarray = new double [size];
     for(int i = 0; i<size; i++)
     {
         fillarray[i] = new Random().NextDouble();
     }
     return fillarray;
+}
+
+
+double FindMax(double max)             //ищем МАКС
+{   max=array[0];
+    for(int n=0; n<size-1; n++)
+    {
+        max = (max<array[n])?array[n]:max; 
+    }
+    return max;
+}
+
+double FindMin(double min)              //ищем МИН
+{   min=array[0];
+    for(int n=0; n<size-1; n++)
+    {
+        min = (min>array[n])?array[n]:min; 
+    }
+    return min;
 }
