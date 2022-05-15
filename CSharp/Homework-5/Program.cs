@@ -38,13 +38,12 @@ Console.WriteLine("enter array size");
 int size = Convert.ToInt32(Console.ReadLine());
 int [] array = GetArray(size);
 Console.WriteLine(String.Join(" ", array));
-int sum = 0;                                 //почему нельзя написать в одну строку: = 0 + Getsum ?
-sum = 0 + Getsum(size);
+int sum = Getsum(array);
 Console.WriteLine($"Cумма нечетных элементов: {sum}");
 
-int Getsum(int size)
+int Getsum(int [] array)
 {
-    for(int n = 0; n < size; n= n+2)
+    for(int n = 0; n < array.Length; n= n+2)
     {
         sum = sum+ array[n];
     }
@@ -90,7 +89,7 @@ double [] GetArray(int size)
 }
 
 
-double FindMax(double max)             //ищем МАКС
+double FindMax(double max)            
 {   max=array[0];
     for(int n=0; n<size-1; n++)
     {
@@ -99,7 +98,7 @@ double FindMax(double max)             //ищем МАКС
     return max;
 }
 
-double FindMin(double min)              //ищем МИН
+double FindMin(double min)              
 {   min=array[0];
     for(int n=0; n<size-1; n++)
     {
