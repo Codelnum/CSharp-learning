@@ -68,6 +68,7 @@ using System;
 Console.Clear();
 Console.WriteLine("enter array size");
 int size = Convert.ToInt32(Console.ReadLine());
+
 double []array = GetArray(size);
 Console.WriteLine(String.Join(" ",array)); //ЗАДАН МАССИВ 
 
