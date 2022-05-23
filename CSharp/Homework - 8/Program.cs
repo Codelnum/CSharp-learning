@@ -243,6 +243,8 @@ void PrintArray2(int[,]array2)
 
 45(1,0,0) 53(1,0,1)
 */
+
+
 using System;
 using static System.Console;
 int sizeA = new Random().Next(1,10);
@@ -261,9 +263,9 @@ void PrintArray(int[,,]array)
         {
             for (int k = 0; k < sizeC; k++)
             {
-                Console.Write($"{array[i,j,k]}({i},{j},{k}) ");
+                Write($"{array[i,j,k]}({i},{j},{k}) ");
             }
-            Console.WriteLine();
+            WriteLine();
         }
     }
 }
