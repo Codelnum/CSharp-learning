@@ -139,6 +139,7 @@ int[,]GetArray(int row, int column)
 
 /*Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
 */
+/*  
 using System;
  Console.Clear();
 int arrayRowSize = new Random().Next(1,10);
@@ -233,6 +234,7 @@ void PrintArray2(int[,]array2)
         Console.WriteLine();
     }
 }
+*/
 /*Задача 60. Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
 
 массив размером 2 x 2 x 2
@@ -241,7 +243,47 @@ void PrintArray2(int[,]array2)
 
 45(1,0,0) 53(1,0,1)
 */
+using System;
+using static System.Console;
+int sizeA = new Random().Next(1,10);
+int sizeB = new Random().Next(1,10);
+int sizeC = new Random().Next(1,10);
+int [,,] array = GetArray(sizeA,sizeB,sizeC);
+PrintArray(array);
 
+
+
+void PrintArray(int[,,]array)
+{
+    for (int i = 0; i < sizeA; i++)
+    {
+        for (int j = 0; j < sizeB; j++)
+        {
+            for (int k = 0; k < sizeC; k++)
+            {
+                Console.Write($"{array[i,j,k]}({i},{j},{k}) ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
+
+
+
+int[,,]GetArray(int sizeA, int sizeB, int sizeC)
+{ int[,,]result = new int [sizeA,sizeB,sizeC];
+for (int i = 0; i < sizeA; i++)
+{
+    for (int j = 0; j < sizeB; j++)
+    {
+        for (int k = 0; k < sizeC; k++)
+        {
+            result[i,j,k] = new Random().Next(10,100);
+        }
+    }
+}
+return result;
+}
 
 
 
