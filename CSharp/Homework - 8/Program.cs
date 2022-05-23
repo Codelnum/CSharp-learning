@@ -1,5 +1,5 @@
 ﻿/*Задача 54: Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.*/
-
+/*
 using System;
 Console.Clear();
 int row = new Random().Next(1,10);
@@ -57,8 +57,7 @@ int [,] GetArray (int row, int column)
     }
     return result;
 }
-
-
+*/
 
 
 /*Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
@@ -75,6 +74,67 @@ int [,] GetArray (int row, int column)
 
 Программа считает сумму элементов в каждой строке и выдаёт номер строки с наименьшей суммой элементов: 1 строка
 */
+
+using System;
+ Console.Clear();
+ Console.WriteLine("Random array:");
+ int row = new Random().Next(2,5);
+ int column = new Random().Next(2,5);
+ Console.WriteLine($"Произвольный массив [{row},{column}]:");
+int [,]array = GetArray(row,column);
+PrintArray(array);
+double min = double.PositiveInfinity;
+int rowindex = 0;
+for (int i = 0; i < row; i++)
+{   double sum = 0;
+    
+        for (int j = 0; j <column; j++)
+        {
+            sum = sum + array[i,j]; // сумма строки
+        }
+        
+        if(sum<min)
+        {
+            min=sum;
+            rowindex = i;
+        }
+        
+        //Console.WriteLine($"Сумма в строке:{sum}");
+        //Console.WriteLine($"Мин. сумма в строках:{min}");
+} 
+        Console.WriteLine($"Номер строки с минимальной суммой:{rowindex+1}");      
+
+
+
+
+void PrintArray(int[,]array)
+{
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < column; j++)
+        {
+            Console.Write($"{array[i,j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+
+
+int[,]GetArray(int row, int column)
+{
+    int [,]result = new int[row,column];
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < column; j++)
+        {
+            result[i,j]= new Random().Next(0,10);
+        }
+    }
+    return result;
+}
+
+
+
 
 
 
