@@ -74,7 +74,7 @@ int [,] GetArray (int row, int column)
 
 Программа считает сумму элементов в каждой строке и выдаёт номер строки с наименьшей суммой элементов: 1 строка
 */
-
+/*
 using System;
  Console.Clear();
  Console.WriteLine("Random array:");
@@ -105,8 +105,6 @@ for (int i = 0; i < row; i++)
         Console.WriteLine($"Номер строки с минимальной суммой:{rowindex+1}");      
 
 
-
-
 void PrintArray(int[,]array)
 {
     for (int i = 0; i < row; i++)
@@ -133,49 +131,108 @@ int[,]GetArray(int row, int column)
     return result;
 }
 
-
-
-
-
-
-
-/*Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
-
-Например, заданы 2 массива:
-
-1 4 7 2
-
-5 9 2 3
-
-8 4 2 4
-
-5 2 6 7
-
-и
-
-1 5 8 5
-
-4 9 4 2
-
-7 2 2 6
-
-2 3 4 7
-
-Их произведение будет равно следующему массиву:
-
-1 20 56 10
-
-20 81 8 6
-
-56 8 4 24
-
-10 6 24 49
 */
 
 
 
 
 
+/*Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
+*/
+using System;
+ Console.Clear();
+int arrayRowSize = new Random().Next(1,10);
+int arrayColumnSize = new Random().Next(1,10);
+int row = arrayRowSize; 
+int column = arrayColumnSize; 
+
+int [,]array1 = GetArray1(row,column);
+int [,]array2 = GetArray2(row,column);
+Console.WriteLine($"Массив 1 [{row},{column}]:");
+PrintArray1(array1);
+Console.WriteLine($"Массив 2 [{row},{column}]:");
+PrintArray2(array2);
+Console.WriteLine($"Перемноженный массив [{row},{column}]:");
+int[,]array = MultiplArray(row,column);
+
+PrintArray(array);
+
+
+
+void PrintArray(int[,]array)
+{
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < column; j++)
+        {
+            Console.Write($"{array[i,j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+
+
+int[,]MultiplArray(int row, int column)
+{
+    int [,]result = new int[row,column];
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < column; j++)
+        {
+            result[i,j]= array1[i,j]*array2[i,j];
+        }
+    }
+    return result;
+}
+
+
+
+int[,]GetArray1(int row, int column)
+{
+    int [,]result = new int[row,column];
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < column; j++)
+        {
+            result[i,j]= new Random().Next(0,10);
+        }
+    }
+    return result;
+}
+int[,]GetArray2(int row, int column)
+{
+    int [,]result = new int[row,column];
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < column; j++)
+        {
+            result[i,j]= new Random().Next(0,10);
+        }
+    }
+    return result;
+}
+void PrintArray1(int[,]array1)
+{
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < column; j++)
+        {
+            Console.Write($"{array1[i,j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+void PrintArray2(int[,]array2)
+{
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < column; j++)
+        {
+            Console.Write($"{array2[i,j]} ");
+        }
+        Console.WriteLine();
+    }
+}
 /*Задача 60. Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
 
 массив размером 2 x 2 x 2
