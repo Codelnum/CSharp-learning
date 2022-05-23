@@ -244,7 +244,7 @@ void PrintArray2(int[,]array2)
 45(1,0,0) 53(1,0,1)
 */
 
-
+/*
 using System;
 using static System.Console;
 int sizeA = new Random().Next(1,10);
@@ -287,18 +287,93 @@ for (int i = 0; i < sizeA; i++)
 return result;
 }
 
-
+*/
 
 
 /*Задача 62. Заполните спирально массив 4 на 4.
 
 Например, на выходе получается вот такой массив:
 
-1 2 3 4
+1(0,0) 2(0,1) 3(0,2) 4(0,3)
 
-12 13 14 5
+12(1,0) 13(1,1) 14(1,2) 5(1,3)
 
-11 16 15 6
+11(2,0) 16(2,1) 15(2,2) 6(2,3)
 
-10 9 8 7
+10(3,0) 9(3,1) 8(3,2) 7(3,3)
+int[]array = new int[row,column]
+int n =0;
+int i=0;
+for(int j=0; j<row; j++)
+{
+    array[i,j]=n;
+    n=n+1
+
+}
+*/
+/*
+using System;
+using static System.Console;
+int sizeA = 4;
+int sizeB = 4;
+int [,] array = GetArray(sizeA,sizeB);
+PrintArray(array);
+
+
+
+void PrintArray(int[,]array)
+{
+    for (int i = 0; i < sizeA; i++)
+    {
+        for (int j = 0; j < sizeB; j++)
+        {
+             Write($"{array[i,j]}  ");
+        }
+        WriteLine();
+    }
+}
+
+
+
+int[,]GetArray(int sizeA, int sizeB)
+{ int[,]result = new int [sizeA,sizeB];
+    int n = 0;
+    int a = 0;
+        for (int b = 0; b < sizeB; b++)
+        {
+            result[a,b] = n;
+            n=n+1;
+        }
+    int d = 3;
+        for (int c = 1; c < sizeB; c++)
+        {
+            result[c,d] = n;
+            n=n+1;
+        }
+    int e = 3;
+        for (int f = 2; f >=0; f--)
+        {
+            result[e,f] = n;
+            n=n+1;
+        }
+    int h = 0;
+        for (int g = 3; g >=1; g--)
+        {
+            result[g,h] = n;
+            n=n+1;
+        }
+    int i = 1;
+        for (int j = 1; j <3; j++)
+        {
+            result[i,j] = n;
+            n=n+1;
+        }
+    int k = 2;
+        for (int l = 2; l >0; l--)
+        {
+            result[k,l] = n;
+            n=n+1;
+        }
+return result;
+}
 */
