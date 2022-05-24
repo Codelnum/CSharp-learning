@@ -73,7 +73,7 @@ A(m-1, A(m, n-1))  при        m>0 и n>0
 using System;
 using static System.Console;
 Clear();
-WriteLine("enter M"); 
+WriteLine("enter M");  //Stack overflow при M>=4 && N>=1
 int M = int.Parse(ReadLine());
 WriteLine("enter N");
 int N = int.Parse(ReadLine());
